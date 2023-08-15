@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-      if matrix:
+    if matrix:
         for array in range(len(matrix)):
             if matrix[array]:
                 for element in range(len(matrix[array])):

@@ -1,4 +1,4 @@
-#!/usr/bin/pythom3
+#!/usr/bin/python3
 """
 module returns object into json
 """

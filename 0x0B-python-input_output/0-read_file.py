@@ -11,4 +11,3 @@ def read_file(filename=""):
     with open(filename, encoding=("utf-8")) as Myfile:
         for line in Myfile:
             print(line, end="")
-            

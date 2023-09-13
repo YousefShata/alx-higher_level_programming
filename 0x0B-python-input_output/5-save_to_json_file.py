@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-json module 
+json module
 """
 import json
 

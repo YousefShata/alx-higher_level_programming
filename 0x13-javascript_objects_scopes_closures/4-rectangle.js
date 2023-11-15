@@ -22,7 +22,7 @@ module.exports = class Rectangle {
     this.width = this.width * 2;
     this.height = this.height * 2;
   }
-  
+
   rotate () {
     let temp = this.width;
     this.width = this.height;

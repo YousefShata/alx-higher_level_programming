@@ -16,6 +16,7 @@ module.exports = class Rectangle {
       console.log(row);
       row = '';
     }
+  }
 
   double () {
     this.width = this.width * 2;

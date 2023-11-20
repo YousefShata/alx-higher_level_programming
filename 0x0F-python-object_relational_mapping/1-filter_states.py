@@ -31,13 +31,10 @@ def main():
 
             for row in rows:
                 print(row)
-        
+        finally:
             cur.close()
+    finally:
         conn.close()
-        except e:
-            pass
-    except e:
-        pass
 
 
 if __name__ == "__main__":

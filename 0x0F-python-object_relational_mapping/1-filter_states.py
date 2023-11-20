@@ -21,10 +21,8 @@ def main():
                                passwd=password, db=db)
         try:
             cur = conn.cursor()
-            quary = """
-                SELECT * FROM states WHERE name LIKE 'N%'
-                ORDER BY id ASC
-            """
+            quary = "SELECT * FROM states WHERE name LIKE 'N%'"
+            quary += "ORDER BY id ASC"
             cur.execute(quary)
 
             rows = cur.fetchall()

@@ -19,21 +19,23 @@ def main():
         conn = MySQLdb.connect(host="localhost",
                                port=3306, user=user,
                                passwd=password, db=db)
-        cur = conn.cursor()
+        try:
+            cur = conn.cursor()
+            quary = """
+                SELECT id, name FROM states WHERE name LIKE 'N%'
+                ORDER BY id ASC
+            """
+            cur.execute(quary)
 
-        quary = """
-            SELECT id, name FROM states WHERE name LIKE 'N%'
-            ORDER BY id ASC
-        """
-        cur.execute(quary)
+            rows = cur.fetchall()
 
-        rows = cur.fetchall()
-
-        for row in rows:
-            print(row)
-
-        cur.close()
+            for row in rows:
+                print(row)
+        
+            cur.close()
         conn.close()
+        except e:
+            pass
     except e:
         pass
 

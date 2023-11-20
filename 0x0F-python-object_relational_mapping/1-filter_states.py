@@ -22,7 +22,7 @@ def main():
         try:
             cur = conn.cursor()
             quary = """
-                SELECT id, name FROM states WHERE name LIKE 'N%'
+                SELECT * FROM states WHERE name LIKE 'N%'
                 ORDER BY id ASC
             """
             cur.execute(quary)

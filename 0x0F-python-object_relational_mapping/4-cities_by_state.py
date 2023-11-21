@@ -23,7 +23,7 @@ def main():
             cur = conn.cursor()
             quary = "SELECT cities.id, cities.name, states.name FROM cities"
             quary += " JOIN states ON states.id = cities.state_id"
-            quary += " ORDER BY cities.id " 
+            quary += " ORDER BY cities.id "
 
             cur.execute(quary)
 

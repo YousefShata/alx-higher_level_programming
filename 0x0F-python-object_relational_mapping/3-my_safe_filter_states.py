@@ -24,8 +24,7 @@ def main():
             quary = "SELECT id, name FROM states"
             quary += " WHERE name LIKE BINARY %s ORDER BY id ASC"
 
-
-            cur.execute(quary, (f'{search%}',))
+            cur.execute(quary, (f'{search}%',))
 
             rows = cur.fetchall()
 

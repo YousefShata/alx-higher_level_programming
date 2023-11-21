@@ -21,7 +21,7 @@ def main():
                                passwd=password, db=db)
         try:
             cur = conn.cursor()
-            quary = "SELECT * FROM cities"
+            quary = "SELECT * FROM cities ORDER BY id ASC"
 
             cur.execute(quary)
 

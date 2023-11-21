@@ -21,7 +21,9 @@ def main():
                                passwd=password, db=db)
         try:
             cur = conn.cursor()
-            quary = "SELECT * FROM cities ORDER BY id ASC"
+            quary = "SELECT cities.id, cities.name, states.name FROM cities"
+            quary += " JOIN states ON states.id = cities.state_id"
+            quary += " ORDER BY cities.id " 
 
             cur.execute(quary)
 

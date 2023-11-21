@@ -21,7 +21,7 @@ def main():
                                passwd=password, db=db)
         try:
             cur = conn.cursor()
-            quary = "SELECT id, name FROM states WHERE name LIKE 'N%' COLLATE SQL_Latin1_General_CP1_CS_AS"
+            quary = "SELECT id, name FROM states WHERE name LIKE 'N%' COLLATE utf8mb4_bin"
             quary += "ORDER BY id ASC"
             cur.execute(quary)
 

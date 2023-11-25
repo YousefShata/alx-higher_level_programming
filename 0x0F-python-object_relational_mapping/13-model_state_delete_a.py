@@ -25,7 +25,7 @@ def main():
                pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session = Session(engine)
-    states = session.query(State).filter(State.name.contain('a')).all()
+    states = session.query(State).filter(State.name.contains('a')).all()
     for state in states:
         session.delete(state)
     session.commit()

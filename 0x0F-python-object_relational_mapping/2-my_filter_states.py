@@ -22,9 +22,9 @@ def main():
         try:
             cur = conn.cursor()
             quary = "SELECT id, name FROM states"
-            quary += " WHERE name LIKE BINARY %s ORDER BY id ASC"
-
-            cur.execute(quary, (f'{search}%',))
+            quary += " WHERE name LIKE BINARY '{}' ORDER BY id ASC".format(
+                      search.strip(""))
+            cur.execute(quary)
 
             rows = cur.fetchall()
 
@@ -38,3 +38,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+	

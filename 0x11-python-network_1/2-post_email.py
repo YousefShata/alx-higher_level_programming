@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-import urllib.request
+from sys import argv
+from urllib import request, parse
 
 url = argv[2]
 
-data = urllib.parse.urlencode({'email': url[2]})
+data = urllib.parse.urlencode({'email': url})
 data = data.encode('ascii')
 req = urllib.request.Request(argv[1], data)
 with urllib.request.urlopen(req) as response:

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import urllib.request
-import sys
+from sys import argv
+from urllib import request
 
 url = sys.argv[1]
 

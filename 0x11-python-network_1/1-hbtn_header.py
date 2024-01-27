@@ -5,9 +5,5 @@ import sys
 url = sys.argv[1]
 
 with urllib.request.urlopen(url) as response:
-    id = response.getheader("X-Request-Id")
-
-    if id is not None:
-        print(id)
-    else:
-        print("No ID")
+    id = response.headers.get("X-Request-Id")
+    print(f"{id}")

@@ -6,7 +6,7 @@ const file = process.argv[2];
 
 const str = process.argv[3];
 
-fs.writeFile(file, 'utf8', (err, data) => {
+fs.writeFile(file, 'str', 'utf8', (err, data) => {
   if (err) {
     console.error('Error reading file:', err);
   }

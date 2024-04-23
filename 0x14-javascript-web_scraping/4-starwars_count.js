@@ -2,7 +2,7 @@
 const request = require('request');
 
 const actorId = '18';
-const url = 'https://swapi-api.alx-tools.com/api/films/';
+const url = proces.argv[2];
 
 request.get(url, (error, response, body) => {
   if (error) {

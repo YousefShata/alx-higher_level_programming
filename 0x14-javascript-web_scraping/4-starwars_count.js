@@ -14,9 +14,13 @@ request.get(url, (error, response, body) => {
   const movieData = JSON.parse(body);
   if (response.statusCode === 200) {
     movieData.results.forEach(film => {
-      if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${actorId}/`)) {
-        totalMovies++;
-      }
+      film.characters.forEach(characterURL => {
+        const urlParts = characterURL.split('/');
+        const id = urlParts[urlParts.length - 2];
+        if (id === actorId) {
+          totalMovies++;
+        }
+      });
     });
   }
   console.log(totalMovies);

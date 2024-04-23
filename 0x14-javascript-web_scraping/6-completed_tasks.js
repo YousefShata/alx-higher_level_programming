@@ -8,14 +8,15 @@ request.get(url, (error, response, body) => {
     console.log(error);
     return;
   }
-  
+
   if (response.statusCode === 200) {
-   
-   const completed = {}
-   const tasks = JSON.parse(body)
-     for (const task of tasks) {
+    const completed = {};
+    const tasks = JSON.parse(body);
+    for (const task of tasks) {
       if (task.completed) {
-      	
+        completed[task.userId] = (completed[task.userId] || 0) + 1;
       }
+    }
+    console.log(completed);
   }
 });
